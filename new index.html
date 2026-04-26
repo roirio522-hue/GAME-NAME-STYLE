@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Game Name Style | 1000+ Pro Nickname Generator</title>
+    <meta name="description" content="Generate 1000+ stylish nicknames for Free Fire, PUBG, Roblox, COD, and Fortnite. Best tool for professional gaming names with cool symbols and fonts.">
+    <meta name="keywords" content="stylish name, nickname generator, free fire name, pubg style name, roblox nickname, gaming symbols, pro gamer names, cool fonts for games">
+    <meta name="author" content="Rafid Ahammed">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Game Name Style | 1000+ Pro Nickname Generator">
+    <meta property="og:description" content="Create unique and stylish gaming names instantly. Supports FF, PUBG, and all major games.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Game+Name+Style">
+
+    <style>
+        /* Smooth Scrolling and Transitions */
+        * { 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        }
+
+        :root {
+            --primary-blue: #00b4ff;
+            --bg-color: #0e1217;
+            --card-bg: #1c222b;
+            --input-bg: #252d38;
+            --text-color: #ffffff;
+            --hint-color: #a0aec0;
+            --accent: #00ff88;
+            --border: #2d3748;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --input-bg: #f8fafc;
+            --text-color: #1e293b;
+            --hint-color: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px var(--primary-blue); }
+            50% { box-shadow: 0 0 20px var(--primary-blue); }
+            100% { box-shadow: 0 0 5px var(--primary-blue); }
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        .container { width: 100%; max-width: 650px; position: relative; }
+
+        .theme-toggle {
+            position: absolute; top: -10px; right: 0;
+            background: var(--card-bg); border: 1px solid var(--border);
+            color: var(--primary-blue); padding: 10px; border-radius: 50%;
+            cursor: pointer; font-size: 20px;
+            box-shadow: var(--shadow);
+            z-index: 10;
+        }
+        .theme-toggle:hover { transform: rotate(180deg) scale(1.1); }
+
+        .main-header { text-align: center; margin: 40px 0 30px; }
+        .main-header h1 { 
+            color: var(--primary-blue); 
+            font-size: 32px; 
+            text-transform: uppercase; 
+            margin: 0; 
+            font-weight: 900;
+            letter-spacing: -1px;
+            animation: fadeInScale 1s ease;
+        }
+        .main-header p { color: var(--hint-color); font-size: 11px; margin-top: 5px; text-transform: uppercase; letter-spacing: 2px; }
+
+        .input-section {
+            background: var(--card-bg); padding: 35px 25px; border-radius: 2rem;
+            margin-bottom: 15px; border: 1px solid var(--border); text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .main-input {
+            width: 100%; padding: 22px; font-size: 22px;
+            background: var(--input-bg); border: 2px solid var(--border); border-radius: 18px;
+            color: var(--text-color); outline: none; text-align: center;
+        }
+        .main-input:focus {
+            border-color: var(--primary-blue);
+            animation: glow 2s infinite ease-in-out;
+            transform: translateY(-2px);
+        }
+
+        .filter-container {
+            display: flex; justify-content: center; gap: 10px; margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--card-bg); border: 1px solid var(--border); color: var(--text-color);
+            padding: 10px 18px; border-radius: 12px; font-size: 12px; font-weight: 700;
+            cursor: pointer; text-transform: uppercase;
+            box-shadow: var(--shadow);
+        }
+        .filter-btn:hover { transform: translateY(-3px); border-color: var(--primary-blue); }
+        .filter-btn.active { background: var(--primary-blue); color: #000; border-color: var(--primary-blue); transform: scale(1.05); }
+
+        .counter-badge {
+            display: inline-block; background: rgba(0, 180, 255, 0.1);
+            color: var(--primary-blue); padding: 8px 20px; border-radius: 50px;
+            font-size: 13px; font-weight: 800; margin-top: 20px;
+            border: 1px solid var(--primary-blue);
+            opacity: 0; transform: translateY(10px);
+        }
+        .counter-badge.show { opacity: 1; transform: translateY(0); animation: fadeInScale 0.5s ease; }
+
+        .feature-box {
+            background: var(--card-bg); padding: 22px; border-radius: 1.5rem;
+            margin-bottom: 25px; border: 1px solid var(--border);
+            display: flex; justify-content: center;
+        }
+        .feature-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, auto); 
+            gap: 15px 30px;
+            justify-content: center;
+            width: 100%;
+        }
+        .feature-item { 
+            font-size: 11px; font-weight: 700; color: var(--hint-color); 
+            text-transform: uppercase; display: flex; align-items: center; gap: 8px; 
+        }
+
+        .name-list { display: grid; grid-template-columns: 1fr; gap: 12px; width: 100%; }
+        .name-card {
+            background: var(--card-bg); padding: 15px 20px; border-radius: 15px;
+            border: 1px solid var(--border); display: flex;
+            justify-content: space-between; align-items: center;
+            animation: cardEntrance 0.5s forwards ease-out;
+            box-shadow: var(--shadow);
+        }
+        .name-card:hover { transform: translateX(5px) scale(1.01); border-color: var(--primary-blue); }
+
+        @keyframes cardEntrance { 
+            from { opacity: 0; transform: translateY(20px) scale(0.9); } 
+            to { opacity: 1; transform: translateY(0) scale(1); } 
+        }
+
+        .name-text { font-size: 1.1rem; font-weight: 500; }
+        
+        .copy-btn {
+            background: var(--primary-blue); color: #000; border: none; padding: 10px 22px;
+            border-radius: 12px; font-size: 11px; font-weight: 900; cursor: pointer; text-transform: uppercase;
+        }
+        .copy-btn:active { transform: scale(0.9); }
+        .copy-btn.copied { background: var(--accent); animation: pop 0.4s ease; }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .seo-section {
+            background: var(--card-bg); padding: 30px; border-radius: 2rem;
+            margin: 40px 0 10px; border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        .seo-section h2 { color: var(--primary-blue); font-size: 18px; margin-bottom: 12px; font-weight: 800; }
+        .seo-section p { color: var(--hint-color); font-size: 13px; line-height: 1.6; }
+
+        footer { margin-top: 20px; padding: 40px 20px; border-top: 1px solid var(--border); text-align: center; }
+        .footer-copy { font-size: 10px; color: #475569; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
+        .footer-dev { font-size: 11px; color: var(--primary-blue); margin-top: 12px; font-weight: 900; text-transform: uppercase; }
+
+        #toast { 
+            position: fixed; bottom: 30px; background: var(--accent); color: #000; 
+            padding: 12px 35px; border-radius: 50px; font-weight: 900; 
+            display: none; z-index: 2000; 
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.4);
+            animation: fadeInScale 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">🌙</button>
+
+    <header class="main-header">
+        <h1>GAME NAME STYLE</h1>
+        <p>1000+ Professional Nickname Designs</p>
+    </header>
+
+    <div class="input-section">
+        <input type="text" id="userInput" class="main-input" placeholder="Enter Name" oninput="debounceGenerate()">
+        <div id="nameCount" class="counter-badge">0 DESIGNS GENERATED</div>
+    </div>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="setFilter('all', this)">All Styles</button>
+        <button class="filter-btn" onclick="setFilter('pro', this)">Pro Symbols</button>
+        <button class="filter-btn" onclick="setFilter('clean', this)">Clean Fonts</button>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-grid">
+            <div class="feature-item">🚀 <span>SUPER-FAST</span></div>
+            <div class="feature-item">🔥 <span>1000+ STYLES</span></div>
+            <div class="feature-item">♾️ <span>UNLIMITED</span></div>
+            <div class="feature-item">🔒 <span>100% PRIVATE</span></div>
+        </div>
+    </div>
+
+    <div class="name-list" id="resultGrid"></div>
+
+    <div class="seo-section">
+        <h2>Ultimate Stylish Nickname Generator for Global Gamers</h2>
+        <p>Elevate your gaming identity with our professional Nickname Style Generator. Compatible with <b>Free Fire, PUBG, Roblox, and COD</b>. Using high-tier supported symbols (亗, 〆, ꧁༺) and professional gold-standard fonts.</p>
+    </div>
+
+    <footer>
+        <div class="footer-copy">© 2026 GAME NAME STYLE | ALL RIGHTS RESERVED</div>
+        <div class="footer-dev">DESIGNED & DEVELOPED BY RAFID AHAMMED</div>
+    </footer>
+</div>
+
+<div id="toast">COPIED SUCCESSFULLY! ✅</div>
+
+<script>
+    let currentFilter = 'all';
+    let timeout = null;
+
+    window.onload = () => {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').innerText = savedTheme === 'light' ? '☀️' : '🌙';
+    };
+
+    function toggleTheme() {
+        const body = document.documentElement;
+        const btn = document.getElementById('themeBtn');
+        const isLight = body.getAttribute('data-theme') === 'light';
+        const newTheme = isLight ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        btn.innerText = newTheme === 'light' ? '☀️' : '🌙';
+    }
+
+    function setFilter(type, btn) {
+        currentFilter = type;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        generateNames();
+    }
+
+    const proSymbols = ["亗", "꧁", "꧂", "〆", "⚡", "々", "☬", "◥", "◤", "乡", "༺", "༻", "╰‿╯", "🔱", "👑", "🛡️", "🎯", "✖️", "✿", "★", "『", "』", "【", "】", "×", "•", "│"];
+
+    const fonts = {
+        normal: (t) => t,
+        gothic: (t) => t.split('').map(c => ({'a':'𝔞','b':'𝔟','c':'𝔠','d':'𝔡','e':'𝔢','f':'𝔣','g':'𝔤','h':'𝔥','i':'𝔦','j':'𝔧','k':'𝔨','l':'𝔩','m':'𝔪','n':'𝔫','o':'𝔬','p':'𝔭','q':'𝗮','r':'𝔯','s':'𝔰','t':'𝔱','u':'𝔲','v':'𝔳','w':'𝔴','x':'𝔵','y':'𝔶','z':'𝔷'}[c.toLowerCase()] || c)).join(''),
+        bold: (t) => t.split('').map(c => ({'a':'𝗮','b':'𝗯','c':'𝗰','d':'𝗱','e':'𝗲','f':'𝗳','g':'𝗴','h':'𝗵','i':'𝗶','j':'𝗷','k':'𝗸','l':'𝗹','m':'𝗺','n':'𝗻','o':'𝗼','p':'𝗽','q':'𝗾','r':'𝗿','s':'𝘀','t':'𝘁','u':'𝘂','v':'𝘃','w':'𝘄','x':'𝗅','y':'𝘆','z':'𝘇'}[c.toLowerCase()] || c)).join(''),
+        small: (t) => t.split('').map(c => ({'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'}[c.toLowerCase()] || c)).join('')
+    };
+
+    function debounceGenerate() {
+        clearTimeout(timeout);
+        timeout = setTimeout(generateNames, 300);
+    }
+
+    function generateNames() {
+        const name = document.getElementById('userInput').value.trim();
+        const grid = document.getElementById('resultGrid');
+        const counter = document.getElementById('nameCount');
+        
+        if(!name) { 
+            grid.innerHTML = '';
+            counter.classList.remove('show'); 
+            return; 
+        }
+
+        let combo = new Set();
+        const fontKeys = Object.keys(fonts);
+        let maxAttempts = 2000;
+
+        while(combo.size < 1000 && maxAttempts > 0) {
+            let f = fonts[fontKeys[Math.floor(Math.random() * fontKeys.length)]];
+            let s = proSymbols[Math.floor(Math.random() * proSymbols.length)];
+            let styledName = f(name);
+            
+            let res = "";
+            if(currentFilter === 'clean') {
+                res = styledName + " " + (Math.floor(Math.random() * 99));
+            } else if(currentFilter === 'pro') {
+                res = `${s} ${styledName} ${s}`;
+            } else {
+                let patterns = [`${s}${styledName}${s}`, `꧁${styledName}꧂`, `〆${styledName}`, `亗${styledName}亗`, `『${styledName}』`, `${styledName}々`, `${s} ${styledName}`];
+                res = patterns[Math.floor(Math.random() * patterns.length)];
+            }
+            combo.add(res);
+            maxAttempts--;
+        }
+
+        grid.innerHTML = '';
+        counter.innerText = `${combo.size} DESIGNS GENERATED`;
+        counter.classList.add('show');
+
+        const fragment = document.createDocumentFragment();
+        let index = 0;
+        combo.forEach(n => {
+            const div = document.createElement('div');
+            div.className = 'name-card';
+            // Added staggered delay for animation
+            if(index < 100) div.style.animationDelay = `${index * 0.03}s`;
+            div.innerHTML = `<span class="name-text">${n}</span><button class="copy-btn" onclick="copyText(this, '${n}')">COPY</button>`;
+            fragment.appendChild(div);
+            index++;
+        });
+        grid.appendChild(fragment);
+    }
+
+    function copyText(btn, text) {
+        navigator.clipboard.writeText(text);
+        btn.innerText = "COPIED ✅";
+        btn.classList.add('copied');
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { 
+            btn.innerText = "COPY"; 
+            btn.classList.remove('copied');
+            toast.style.display = 'none'; 
+        }, 1500);
+    }
+</script>
+</body>
+</html>
